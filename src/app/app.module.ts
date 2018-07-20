@@ -18,7 +18,7 @@ const routes:Routes=[
   {path:'find',redirectTo:'search'},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
-  {path:'recipedetail/:recipeID', component:RecipeDetailComponent},
+  {path:'recipedetail/:recipeURI', component:RecipeDetailComponent},
   // {path:'recipedetail/123', component:RecipeDetailComponent}, <- this would be prefereed than above
   {path: '**',redirectTo : 'home'}
 ];
