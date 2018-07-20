@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -13,7 +13,5 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(params=>console.log(params))
   }
-
-
-
+  
 }
