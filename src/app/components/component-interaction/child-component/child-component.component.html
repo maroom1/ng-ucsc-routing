@@ -1,0 +1,8 @@
+<div *ngFor="let instructor of instructors">
+    <h1> Roster of Instructions</h1>
+    <h3> Instructor Name: {{instructor.name}}</h3>
+    <h2> Bio: I am {{instructor.name}} from {{universityName}}</h2>
+    <input type="text" #myNickName>Type a Nick Name
+    <button (click)="interactWithParent(myNickName.value)">Click me</button>
+  
+</div>

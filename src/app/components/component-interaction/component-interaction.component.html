@@ -1,0 +1,4 @@
+<h2> {{uni}} employs {{instructors.length}} instructors</h2>  
+  <button (click)="childComponent.methodsToBeCalledByParent('#5#')">Click to call child</button>
+  <app-child-component #childComponent  [instructor]="instructor" [uni]="uni" (valueFromChaild)="handleChildInteraction($event)"></app-child-component>
+  

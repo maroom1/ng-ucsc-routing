@@ -10,6 +10,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
+import { AppImageOverlayDirective } from './directives/app-image-overlay.directive';
+import { ComponentInteractionComponent } from './components/component-interaction/component-interaction.component';
+import { ChildComponentComponent } from './components/component-interaction/child-component/child-component.component';
+import { HttpModule } from '../../node_modules/@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes:Routes=[
   {path:'', component: HomeComponent, pathMatch:'full'},
@@ -19,6 +24,7 @@ const routes:Routes=[
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'recipedetail/:recipeURI', component:RecipeDetailComponent},
+  {path:'componentinteraction',component:ComponentInteractionComponent},
   // {path:'recipedetail/123', component:RecipeDetailComponent}, <- this would be prefereed than above
   {path: '**',redirectTo : 'home'}
 ];
@@ -31,10 +37,14 @@ const routes:Routes=[
     RegisterComponent,
     SearchComponent,
     NavbarComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    AppImageOverlayDirective,
+    ComponentInteractionComponent,
+    ChildComponentComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes,{ useHash: true })
   ],
   providers: [],

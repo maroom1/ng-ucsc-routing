@@ -1,16 +1,24 @@
+
+<div class="dropdown">
 <form class="form-inline">
     <div class="form-group">
       <input type="search"
              class="form-control"
              placeholder="Enter search string"
-             #search>
+             #search (keyup)="getRecipes(search.value)" >
     </div>
     <button type="button"
-            class="btn btn-secondary"
+            class="btn btn-secondary" 
             (click)="onSearch(search.value)">
       Search
     </button>
-  </form>
+ </form>
+ <div *ngFor="let item of searchResults">
+   <h5>{{item.label}}</h5>
+ </div>
+</div>
+
+ 
   
   <hr/>
   
@@ -22,13 +30,13 @@
   <div class="row " >
   
     <div class="col-4 card-deck" *ngFor="let recipe of recipes" >
-      <div class="card border-secondary mb-3" style="max-width: 48rem;">
+      <div class="card border-secondary mb-3" appAppImageOverlay [config]="{querySelector: 'p'}" style="max-width: 48rem;">
         <img class="card-img-top" src={{recipe.image}} alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{recipe.label}}</h5>
           <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
         </div>
-        <ul class="list-group list-group-flush">
+        <ul id="detailsList" class="list-group list-group-flush" [style.display]="'none'">
           <li class="list-group-item">Calories: {{recipe.calories|number}}</li>
           <li class="list-group-item">Total Weight: {{recipe.totalWeight|number}}</li>
           <li class="list-group-item">Total Time : {{recipe.totalTime | number}}  minutes</li>

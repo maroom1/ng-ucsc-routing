@@ -1,4 +1,62 @@
-<p>
-  recipe-detail works!
-</p>
+<div class="container">
 
+  <div class="row">
+    <div class="col col-md-3 mb-3" style="padding-right: 20px;">
+      <a href=" {{recipeDetail.uri}} ">
+        <img src="{{recipeDetail.image}}" style="width: 250px;" class="rounded mx-auto d-block">
+      </a>
+      <h3>{{recipeDetail.label}}<a href="{{recipeDetail.url}}" class="badge badge-primary">more details>></a></h3>
+    </div>
+    <div class="col col-md-9 mb-6" tyle="padding-left: 20px;">
+      <h5>{{recipeDetail.source}}</h5>
+      <h6><a href="{{recipeDetail.shareAs}}" class="badge badge-info">more details on proteins>></a></h6>
+
+      <div class="card">
+        <div class="card-subtitle mb-2 text-muted">Prepartion</div>
+        <div class="card-body">
+            {{recipeDetail.ingredientLines}}
+        </div>
+      </div>
+
+
+      <table class="table table-dark">
+        <thead>
+          <tr>
+              
+              <th scope="col">Calories</th>
+              <th scope="col">TotalWeight</th>
+              <th scope="col">TotalTime</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+               
+                <td>{{recipeDetail.calories}}</td>
+                <td> {{recipeDetail.totalWeight}}</td>
+                <td>  {{recipeDetail.totalTime}}
+                  </td>
+              </tr>
+              </tbody>
+      </table>
+      <div class="card bg-light text-center">
+        <div class="card-header">Extras</div>
+        <div class="card-text"><em>{{recipeDetail.cautions}}<br>   {{recipeDetail.healthLabels}} 
+          <!-- {{recipeDetail.yield}}
+     {{recipeDetail.dietLabels}} -->
+         </em></div>
+      </div>
+      
+    </div>
+  </div>
+<pre>
+  
+  
+  <!-- {{recipeDetail.ingredients}} -->
+  
+ 
+  <!-- {{recipeDetail.totalNutrients}}
+  {{recipeDetail.totalDaily}} -->
+  <!-- {{recipeDetail.digest}} -->
+
+</pre>
+</div>
